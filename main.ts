@@ -17,27 +17,25 @@
  * 
  * 7) Game Over – End the game if a star hits the ground.
  */
-/**
- * This is the box controls your sprite
- * 
- * *Creates sprite, creates sprite movement, and where the sprite can move).
- */
-/**
- * This box controls your falling stars
- * 
- * *Creates stars, tells them when, where and how fast they can fall
- */
-/**
- * This box controls what happens when the sprite and star interact
- * 
- * *score increase and star is destroyed/ caught
- */
 // 6 & 7: When Player overlaps a Star → increase score & destroy Star
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     // destroy the star that was caught
     otherSprite.destroy()
 })
+/**
+ * This is the box controls your sprite:
+ * 
+ * *Creates sprite, creates sprite movement, and where the sprite can move).
+ * 
+ * Challenge!: background/access point
+ * 
+ * **HINT! use this block to move your sprite closer to the bottom of the screen!  ----->                                                      
+ * 
+ * **HINT! Use this block to help make background                          
+ * 
+ *                                       ---->
+ */
 let star: Sprite = null
 // 1: Create Player sprite
 let mySprite = sprites.create(assets.image`guy`, SpriteKind.Player)
@@ -45,6 +43,22 @@ let mySprite = sprites.create(assets.image`guy`, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 0)
 // keeps player on screen
 mySprite.setStayInScreen(true)
+/**
+ * This box controls your falling stars
+ * 
+ * *Creates stars, tells them when, where and how fast they can fall
+ * 
+ * Challenge:
+ * 
+ * what else can fall from the sky? Click on the star and create your own design!
+ * 
+ * **Don't forget to name your sprite!
+ */
+/**
+ * This box controls what happens when the sprite and star interact
+ * 
+ * *score increase and star is destroyed/ caught
+ */
 // keeps player on screen
 // 3, 4, 5: Create new Stars on a timer
 game.onUpdateInterval(1000, function () {
